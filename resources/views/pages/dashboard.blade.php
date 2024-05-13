@@ -71,9 +71,9 @@
                             </div>
                             <div class="card-body">
                                 <?php
-                                $dpas = 10;
+                                $dpas = 0;
                                 $sisas = 0;
-
+                                
                                 if ($dpas != 0) {
                                     $result = number_format((($dpas - $sisas) / $dpas) * 100, 2, ',', '.');
                                     echo "<h6>$result %</h6>";
