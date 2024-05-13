@@ -70,18 +70,7 @@
                                 <h4>Capaian (%)</h4>
                             </div>
                             <div class="card-body">
-                                <?php
-                                $dpas = 0;
-                                $sisas = 0;
-                                
-                                if ($dpas != 0) {
-                                    $result = number_format((($dpas - $sisas) / $dpas) * 100, 2, ',', '.');
-                                    echo "<h6>$result %</h6>";
-                                } else {
-                                    echo '<h6>Undefined</h6>';
-                                }
-                                ?>
-                                {{-- <h6>{{ number_format((($dpas - $sisas) / $dpas) * 100, 2, ',', '.') }} %</h6> --}}
+                                <h6>{{ number_format((($dpas - $sisas) / $dpas) * 100, 2, ',', '.') }} %</h6>
                             </div>
                         </div>
                     </div>
