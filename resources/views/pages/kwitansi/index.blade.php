@@ -54,7 +54,7 @@ setlocale(LC_TIME, 'id_ID');
                                         </tr>
                                         @foreach ($kwitansis as $kwitansi)
                                             <tr>
-                                                <td>{{ $kwitansi->kw_id }}/KTK/2024
+                                                <td>{{ $kwitansi->kw_id }}/KSL/2024
                                                 </td>
                                                 <td>{{ Carbon::parse($kwitansi->tgl)->formatLocalized('%e %B %Y') }}</td>
                                                 <td>{{ $kwitansi->hal }}</td>
@@ -62,11 +62,15 @@ setlocale(LC_TIME, 'id_ID');
                                                 <td>{{ number_format($kwitansi->nilai) }}</td>
                                                 <td>
                                                     @if ($kwitansi->file)
-                                                        <a href="{{url($kwitansi->file)}}" target="blank" title="Lihat File"><i class="fa-regular fa-folder-open"></i></i></a>
+                                                        <a href="{{ url($kwitansi->file) }}" target="blank"
+                                                            title="Lihat File"><i
+                                                                class="fa-regular fa-folder-open"></i></i></a>
                                                     @else
                                                         @if ($kwitansi->anggaran->rekening->kode_rekening == '5.1.02.04.01.0003')
                                                         @else
-                                                            <button class="btn btn-sm btn-outline-danger" title="Tidak ada"><i class="fa-regular fa-circle-xmark"></i></button>
+                                                            <button class="btn btn-sm btn-outline-danger"
+                                                                title="Tidak ada"><i
+                                                                    class="fa-regular fa-circle-xmark"></i></button>
                                                         @endif
                                                     @endif
                                                 </td>
@@ -81,8 +85,8 @@ setlocale(LC_TIME, 'id_ID');
                                                             <i class="fa fa-edit"></i>
                                                         </button> &nbsp;
                                                         @if ($kwitansi->nilai !== $kwitansi->sisa)
-                                                            <a href="{{ route('pajak', $kwitansi->kw_id) }}" title="Input Pajak"
-                                                                class="btn btn-sm btn-success btn-icon">
+                                                            <a href="{{ route('pajak', $kwitansi->kw_id) }}"
+                                                                title="Input Pajak" class="btn btn-sm btn-success btn-icon">
                                                                 <i class="fa-solid fa-dollar"></i>
                                                             </a>
                                                         @endif
